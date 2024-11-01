@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Inheritance</title>
+</head>
+
+<body>
+    <h1>Class Inheritance in JS</h1>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+        class Mobile { 
+            constructor(model) {
+                this.mobileModel = model;
+            }
+            static model() { 
+                return "Galaxy Z fold";
+            }
+            present() {
+                return 'I have ' + this.mobileModel;
+            }
+        }
+        class Model extends Mobile { 
+            constructor(model, company) {
+                super(model);
+                this.mobileCompany = company;
+            }
+            show() {
+                return this.present() + " and it is of " + this.mobileCompany;
+            }
+        }
+
+        let myMobile = new Model("Galaxy Z Fold", "Samsung"); 
+        document.getElementById("p1").innerHTML = myMobile.show(); 
+        document.getElementById("p2").innerHTML = Mobile.model(); 
+    </script>
+</body>
+
+</html>
